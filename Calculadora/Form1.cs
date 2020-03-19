@@ -7,7 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*  WRITTEN AND DIRECTED BY ALVARO GARCIA HERRERO.
+ *  Calculadura que suma, resta, divide, multiplica, x al cuadrado y al cubo
+ * hace porcentajes y tiene un boton de limpiar los números de la consola.
+ * Cuando se quiere hacer una operacion con solo un número(raiz cuadrada...)
+ * Se pulsa el numero, luego el icono de raiz y luego el "=" :D.
+ */
 namespace Calculadora
 {
     public partial class Form1 : Form
@@ -78,8 +83,10 @@ namespace Calculadora
                 resultado = operando1 * operando2;
                 resultado /= 100;
             }
-
-
+            else if (operacion == "√")
+            {
+                resultado = Math.Sqrt(operando1);
+            }
             label1.Text = Convert.ToString(resultado);
         }
 
