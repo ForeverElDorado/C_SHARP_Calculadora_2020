@@ -24,20 +24,22 @@ namespace Calculadora
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void numeros(object sender, EventArgs e)
         {
             Button boton = (Button)sender;
             if (label1.Text == "0")
             {
                 label1.Text = boton.Text;
+                label2.Text = boton.Text;
             }
             else
             {
                 label1.Text = label1.Text + boton.Text;
+                label2.Text = label2.Text + boton.Text;
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void operaciones(object sender, EventArgs e)
         {
             Button boton = (Button)sender;
             operacion = boton.Text;
@@ -45,7 +47,7 @@ namespace Calculadora
             label1.Text = "0";  
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void igual(object sender, EventArgs e)
         {
             double operando2 = Convert.ToDouble(label1.Text);
             double resultado = 0;
@@ -64,6 +66,14 @@ namespace Calculadora
             else if (operacion == "/")
             {
                 resultado = operando1 / operando2;
+            }
+            else if(operacion == "X²")
+            {
+                resultado = operando1 * operando1;
+            }
+            else if (operacion == "X³")
+            {
+                resultado = operando1 * operando1 * operando1;
             }
 
 
