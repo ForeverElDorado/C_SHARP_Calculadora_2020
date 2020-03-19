@@ -30,12 +30,10 @@ namespace Calculadora
             if (label1.Text == "0")
             {
                 label1.Text = boton.Text;
-                label2.Text = boton.Text;
             }
             else
             {
                 label1.Text = label1.Text + boton.Text;
-                label2.Text = label2.Text + boton.Text;
             }
         }
 
@@ -75,9 +73,20 @@ namespace Calculadora
             {
                 resultado = operando1 * operando1 * operando1;
             }
+            else if (operacion == "%")
+            {
+                resultado = operando1 * operando2;
+                resultado /= 100;
+            }
 
 
             label1.Text = Convert.ToString(resultado);
+        }
+
+        private void borrar(object sender, EventArgs e)
+        {
+            Button boton = (Button)sender;
+            label1.Text = "0";
         }
     }
 }
